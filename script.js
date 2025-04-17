@@ -1,4 +1,4 @@
-//timer
+// timer
 const startTime = new Date('December 23, 2022 11:30:00 GMT+0200');
 const counterEl = document.getElementById('timeCounter');
 
@@ -10,7 +10,7 @@ function updateCounter() {
 updateCounter();
 setInterval(updateCounter, 1000);
 
-//scroll
+// scroll
 const sections = document.querySelectorAll('.section');
 window.addEventListener('scroll', () => {
   const trigger = window.innerHeight * 0.8;
@@ -20,4 +20,15 @@ window.addEventListener('scroll', () => {
       section.classList.add('visible');
     }
   });
+});
+
+// mute
+const music = document.getElementById('bg-music');
+const muteBtn = document.getElementById('mute-btn');
+
+music.volume = 0.5; 
+
+muteBtn.addEventListener('click', () => {
+  music.muted = !music.muted;
+  muteBtn.textContent = music.muted ? '🔇' : '🔊';
 });
