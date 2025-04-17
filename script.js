@@ -25,10 +25,17 @@ window.addEventListener('scroll', () => {
 // mute
 const music = document.getElementById('bg-music');
 const muteBtn = document.getElementById('mute-btn');
+const startBtn = document.getElementById('start-btn');
 
 music.volume = 0.5; 
 
 muteBtn.addEventListener('click', () => {
   music.muted = !music.muted;
   muteBtn.textContent = music.muted ? '🔇' : '🔊';
+});
+
+//start button
+startBtn.addEventListener('click', () => {
+  music.play();
+  startBtn.style.display = 'none'; 
 });
